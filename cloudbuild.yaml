@@ -2,10 +2,10 @@ steps:
   # Build and push imagew
   - name: 'gcr.io/cloud-builders/docker'
     dir: 'app'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api', '.']
+    args: ['build', '-t', 'europe-west2-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api']
+    args: ['push', 'europe-west2-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api']
 
   # Terraform init
   - name: 'hashicorp/terraform:1.5.6'
@@ -23,7 +23,7 @@ steps:
         terraform apply -auto-approve \
           -var="project_id=$PROJECT_ID" \
           -var="region=europe-west1" \
-          -var="image_url=europe-west1-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api"
+          -var="image_url=europe-west2-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api"
 
 # Grant permission to impersonate the deploy service account
 serviceAccount: projects/$PROJECT_ID/serviceAccounts/cloud-build-sa@$PROJECT_ID.iam.gserviceaccount.com

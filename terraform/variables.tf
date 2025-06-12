@@ -1,5 +1,5 @@
 variable "project_id" {}
 variable "region" {
-  default = "europe-west1"
+  default = "europe-west2"
 }
 variable "image_url" {}
