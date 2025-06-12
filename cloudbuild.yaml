@@ -1,5 +1,5 @@
 steps:
-  # Build and push image
+  # Build and push imagew
   - name: 'gcr.io/cloud-builders/docker'
     dir: 'app'
     args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/lines-app/lines-api', '.']
