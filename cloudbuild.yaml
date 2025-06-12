@@ -27,3 +27,5 @@ steps:
 
 # Grant permission to impersonate the deploy service account
 serviceAccount: projects/$PROJECT_ID/serviceAccounts/cloud-build-sa@$PROJECT_ID.iam.gserviceaccount.com
+options:
+  logging: CLOUD_LOGGING_ONLY
